@@ -9,7 +9,7 @@ import glob
 from datetime import datetime
 import time
 
-epochs = 25
+epochs = 10
 batch_size = 1  # 2 or 4
 input_size, model = get_unet_128()
 # model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train

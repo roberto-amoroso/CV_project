@@ -49,16 +49,16 @@ def get_unet_128(input_shape=(128, 128, 3),
     # 8
 
     # New layer added
-    down5 = Conv2D(512, (3, 3), padding='same')(down4_pool)
+    down5 = Conv2D(256, (3, 3), padding='same')(down4_pool)
     down5 = BatchNormalization()(down5)
     down5 = Activation('relu')(down5)
-    down5 = Conv2D(512, (3, 3), padding='same')(down5)
+    down5 = Conv2D(256, (3, 3), padding='same')(down5)
     down5 = BatchNormalization()(down5)
     down5 = Activation('relu')(down5)
     down5_pool = MaxPooling2D((2, 2), strides=(2, 2))(down5)
     # 4
 
-    center = Conv2D(512, (3, 3), padding='same')(down4_pool)
+    center = Conv2D(512, (3, 3), padding='same')(down5_pool)
     center = BatchNormalization()(center)
     center = Activation('relu')(center)
     center = Conv2D(512, (3, 3), padding='same')(center)

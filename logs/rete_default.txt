@@ -1,0 +1,23 @@
+Epoch 1/10
+ - 146s - loss: 0.9261 - dice_loss: 0.2443 - val_loss: 2.3520 - val_dice_loss: 0.2781
+WARNING:tensorflow:From d:\Work\Computer Vision\CV_project\venv\lib\site-packages\keras\callbacks.py:995: The name tf.Summary is deprecated. Please use tf.compat.v1.Summary instead.
+
+Epoch 2/10
+ - 152s - loss: 0.5539 - dice_loss: 0.5444 - val_loss: 5.5422 - val_dice_loss: 0.1610
+Epoch 3/10
+ - 150s - loss: 0.4319 - dice_loss: 0.6503 - val_loss: 2.3197 - val_dice_loss: 0.3295
+Epoch 4/10
+ - 150s - loss: 0.3704 - dice_loss: 0.6999 - val_loss: 1.7791 - val_dice_loss: 0.3354
+Epoch 5/10
+ - 151s - loss: 0.3790 - dice_loss: 0.6958 - val_loss: 0.5379 - val_dice_loss: 0.6685
+Epoch 6/10
+ - 153s - loss: 0.3204 - dice_loss: 0.7418 - val_loss: 0.2757 - val_dice_loss: 0.7767
+Epoch 7/10
+ - 151s - loss: 0.3165 - dice_loss: 0.7416 - val_loss: 0.8840 - val_dice_loss: 0.3129
+Epoch 8/10
+ - 152s - loss: 0.3253 - dice_loss: 0.7363 - val_loss: 0.4289 - val_dice_loss: 0.6401
+Epoch 9/10
+ - 153s - loss: 0.3216 - dice_loss: 0.7349 - val_loss: 1.1182 - val_dice_loss: 0.4783
+Epoch 10/10
+ - 151s - loss: 0.3111 - dice_loss: 0.7452 - val_loss: 0.7417 - val_dice_loss: 0.4173
+ 
