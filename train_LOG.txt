@@ -1,0 +1,109 @@
+Training on 15 samples
+Validating on 2 samples
+Epoch 1/50
+ - 14s - loss: 1.0391 - dice_loss: 0.4688 - val_loss: 10.7197 - val_dice_loss: 0.3464
+Epoch 2/50
+ - 7s - loss: 0.6258 - dice_loss: 0.6150 - val_loss: 1.0967 - val_dice_loss: 0.5671
+Epoch 3/50
+ - 8s - loss: 0.6259 - dice_loss: 0.6041 - val_loss: 4.8701 - val_dice_loss: 0.4932
+Epoch 4/50
+ - 7s - loss: 0.4898 - dice_loss: 0.6861 - val_loss: 4.8520 - val_dice_loss: 0.4590
+Epoch 5/50
+ - 7s - loss: 0.4675 - dice_loss: 0.7171 - val_loss: 8.4664 - val_dice_loss: 0.3880
+Epoch 6/50
+ - 7s - loss: 0.5187 - dice_loss: 0.6754 - val_loss: 12.5299 - val_dice_loss: 0.3364
+
+Epoch 00006: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+Epoch 7/50
+ - 7s - loss: 0.5438 - dice_loss: 0.6564 - val_loss: 9.3567 - val_dice_loss: 0.3906
+Epoch 8/50
+ - 7s - loss: 0.3331 - dice_loss: 0.7849 - val_loss: 7.0416 - val_dice_loss: 0.4313
+Epoch 9/50
+ - 7s - loss: 0.4828 - dice_loss: 0.7044 - val_loss: 6.5035 - val_dice_loss: 0.4459
+Epoch 10/50
+ - 7s - loss: 0.2941 - dice_loss: 0.8030 - val_loss: 4.1910 - val_dice_loss: 0.5349
+
+Epoch 00010: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+Epoch 11/50
+ - 8s - loss: 0.2980 - dice_loss: 0.7994 - val_loss: 0.6894 - val_dice_loss: 0.7060
+Epoch 12/50
+ - 8s - loss: 0.2423 - dice_loss: 0.8351 - val_loss: 0.3354 - val_dice_loss: 0.7906
+Epoch 13/50
+ - 7s - loss: 0.2711 - dice_loss: 0.8296 - val_loss: 0.2363 - val_dice_loss: 0.8499
+Epoch 14/50
+ - 7s - loss: 0.2289 - dice_loss: 0.8517 - val_loss: 0.2542 - val_dice_loss: 0.8423
+Epoch 15/50
+ - 7s - loss: 0.3050 - dice_loss: 0.8008 - val_loss: 0.2406 - val_dice_loss: 0.8489
+Epoch 16/50
+ - 8s - loss: 0.2413 - dice_loss: 0.8305 - val_loss: 0.2129 - val_dice_loss: 0.8642
+Epoch 17/50
+ - 7s - loss: 0.2378 - dice_loss: 0.8332 - val_loss: 0.2176 - val_dice_loss: 0.8615
+Epoch 18/50
+ - 8s - loss: 0.2479 - dice_loss: 0.8350 - val_loss: 0.2117 - val_dice_loss: 0.8648
+Epoch 19/50
+ - 7s - loss: 0.2765 - dice_loss: 0.8366 - val_loss: 0.2106 - val_dice_loss: 0.8714
+Epoch 20/50
+ - 8s - loss: 0.2136 - dice_loss: 0.8560 - val_loss: 0.1432 - val_dice_loss: 0.9091
+Epoch 21/50
+ - 8s - loss: 0.1867 - dice_loss: 0.8817 - val_loss: 0.1389 - val_dice_loss: 0.9110
+Epoch 22/50
+ - 7s - loss: 0.2290 - dice_loss: 0.8540 - val_loss: 0.1423 - val_dice_loss: 0.9091
+Epoch 23/50
+ - 7s - loss: 0.2214 - dice_loss: 0.8577 - val_loss: 0.1314 - val_dice_loss: 0.9157
+Epoch 24/50
+ - 8s - loss: 0.1635 - dice_loss: 0.8881 - val_loss: 0.1373 - val_dice_loss: 0.9128
+Epoch 25/50
+ - 8s - loss: 0.1803 - dice_loss: 0.8825 - val_loss: 0.1338 - val_dice_loss: 0.9168
+Epoch 26/50
+ - 7s - loss: 0.2114 - dice_loss: 0.8591 - val_loss: 0.1612 - val_dice_loss: 0.9067
+Epoch 27/50
+ - 8s - loss: 0.2293 - dice_loss: 0.8697 - val_loss: 0.2463 - val_dice_loss: 0.8740
+Epoch 28/50
+ - 7s - loss: 0.1525 - dice_loss: 0.8986 - val_loss: 0.1503 - val_dice_loss: 0.9132
+Epoch 29/50
+ - 7s - loss: 0.1747 - dice_loss: 0.8819 - val_loss: 0.1088 - val_dice_loss: 0.9304
+Epoch 30/50
+ - 8s - loss: 0.2213 - dice_loss: 0.8541 - val_loss: 0.1277 - val_dice_loss: 0.9237
+Epoch 31/50
+ - 7s - loss: 0.1694 - dice_loss: 0.8919 - val_loss: 0.1190 - val_dice_loss: 0.9266
+Epoch 32/50
+ - 7s - loss: 0.1443 - dice_loss: 0.9042 - val_loss: 0.0992 - val_dice_loss: 0.9384
+Epoch 33/50
+ - 8s - loss: 0.1209 - dice_loss: 0.9215 - val_loss: 0.1153 - val_dice_loss: 0.9288
+Epoch 34/50
+ - 8s - loss: 0.1222 - dice_loss: 0.9253 - val_loss: 0.1065 - val_dice_loss: 0.9333
+Epoch 35/50
+ - 7s - loss: 0.1158 - dice_loss: 0.9244 - val_loss: 0.1115 - val_dice_loss: 0.9305
+Epoch 36/50
+ - 7s - loss: 0.1389 - dice_loss: 0.9139 - val_loss: 0.1101 - val_dice_loss: 0.9329
+
+Epoch 00036: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+Epoch 37/50
+ - 7s - loss: 0.1085 - dice_loss: 0.9285 - val_loss: 0.0988 - val_dice_loss: 0.9395
+Epoch 38/50
+ - 8s - loss: 0.1266 - dice_loss: 0.9101 - val_loss: 0.0998 - val_dice_loss: 0.9382
+Epoch 39/50
+ - 8s - loss: 0.1120 - dice_loss: 0.9201 - val_loss: 0.1018 - val_dice_loss: 0.9397
+Epoch 40/50
+ - 8s - loss: 0.1123 - dice_loss: 0.9300 - val_loss: 0.0960 - val_dice_loss: 0.9428
+Epoch 41/50
+ - 7s - loss: 0.1047 - dice_loss: 0.9325 - val_loss: 0.1052 - val_dice_loss: 0.9380
+Epoch 42/50
+ - 7s - loss: 0.0997 - dice_loss: 0.9358 - val_loss: 0.0926 - val_dice_loss: 0.9449
+Epoch 43/50
+ - 7s - loss: 0.1025 - dice_loss: 0.9303 - val_loss: 0.0879 - val_dice_loss: 0.9467
+Epoch 44/50
+ - 7s - loss: 0.1006 - dice_loss: 0.9341 - val_loss: 0.0873 - val_dice_loss: 0.9473
+Epoch 45/50
+ - 8s - loss: 0.1019 - dice_loss: 0.9318 - val_loss: 0.0937 - val_dice_loss: 0.9462
+Epoch 46/50
+ - 8s - loss: 0.0939 - dice_loss: 0.9363 - val_loss: 0.0906 - val_dice_loss: 0.9465
+Epoch 47/50
+ - 7s - loss: 0.1135 - dice_loss: 0.9376 - val_loss: 0.0790 - val_dice_loss: 0.9531
+Epoch 48/50
+ - 7s - loss: 0.1119 - dice_loss: 0.9335 - val_loss: 0.0904 - val_dice_loss: 0.9503
+Epoch 49/50
+ - 7s - loss: 0.1075 - dice_loss: 0.9281 - val_loss: 0.0850 - val_dice_loss: 0.9507
+Epoch 50/50
+ - 4s - loss: 0.1192 - dice_loss: 0.9220 - val_loss: 0.1009 - val_dice_loss: 0.9439
+Press any key to continue . . .
