@@ -9,18 +9,19 @@ import glob
 from datetime import datetime
 import time
 
-epochs = 50
-batch_size = 1   # 2 or 4
+epochs = 25
+batch_size = 1  # 2 or 4
 input_size, model = get_unet_128()
-#model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
+# model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
 
-weigth_name = datetime.now().strftime('weights/%Y_%m_%d_%H_%M_') + ('epochs_%d_batch_%d_weights.hdf5' % (epochs, batch_size))
+weigth_name = datetime.now().strftime('weights/%Y_%m_%d_%H_%M_') + (
+            'epochs_%d_batch_%d_weights.hdf5' % (epochs, batch_size))
 
 train_img_path_template = 'MyDataset/train/{}.jpg'
 train_img_mask_path_template = 'MyDataset/train/segmentation/{}.png'
 
 train_filenames = glob.glob("MyDataset/train/*.jpg")
-train_filenames = [filename.replace('\\','/').replace('.jpg', '') for filename in train_filenames]
+train_filenames = [filename.replace('\\', '/').replace('.jpg', '') for filename in train_filenames]
 train_filenames = [filename.split('/')[-1] for filename in train_filenames]
 
 train_split, valid_split = train_test_split(train_filenames, test_size=0.10, random_state=42)
@@ -39,18 +40,18 @@ def train_generator():
             end = min(start + batch_size, len(train_split))
             ids_train_batch = train_split[start:end]
             for id in ids_train_batch:
-                img  = cv2.imread(train_img_path_template.format(id))
-                img  = cv2.resize(img, (input_size, input_size))
+                img = cv2.imread(train_img_path_template.format(id))
+                img = cv2.resize(img, (input_size, input_size))
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
                 mask = cv2.resize(mask, (input_size, input_size))
                 img = randomHueSaturationValue(img,
-                                               hue_shift_limit=(-50, 50),
-                                               sat_shift_limit=(-5, 5),
-                                               val_shift_limit=(-15, 15))
+                                               hue_shift_limit=(-55, 55),
+                                               sat_shift_limit=(-10, 10),
+                                               val_shift_limit=(-20, 20))
                 img, mask = randomShiftScaleRotate(img, mask,
-                                                   shift_limit=(-0.25, 0.25),
-                                                   scale_limit=(-0.3, 0.3),
-                                                   rotate_limit=(-10, 10))
+                                                   shift_limit=(-0.30, 0.30),
+                                                   scale_limit=(-0.35, 0.35),
+                                                   rotate_limit=(-15, 15))
                 img, mask = randomHorizontalFlip(img, mask)
                 mask = np.expand_dims(mask, axis=2)
                 x_batch.append(img)
@@ -70,8 +71,8 @@ def valid_generator():
             end = min(start + batch_size, len(valid_split))
             ids_valid_batch = valid_split[start:end]
             for id in ids_valid_batch:
-                img  = cv2.imread(train_img_path_template.format(id))
-                img  = cv2.resize(img, (input_size, input_size))
+                img = cv2.imread(train_img_path_template.format(id))
+                img = cv2.resize(img, (input_size, input_size))
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
                 mask = cv2.resize(mask, (input_size, input_size))
                 mask = np.expand_dims(mask, axis=2)
@@ -83,23 +84,23 @@ def valid_generator():
 
 
 callbacks = [
-#        EarlyStopping(monitor='val_dice_loss',
-#                           patience=8,
-#                           verbose=1,
-#                           min_delta=1e-4,
-#                           mode='max'),
-             ReduceLROnPlateau(monitor='val_dice_loss',
-                               factor=0.5,
-                               patience=4,
-                               verbose=1,
-                               epsilon=1e-5,
-                               mode='max'),
-             ModelCheckpoint(monitor='val_dice_loss',
-                             filepath= weigth_name,
-                             save_best_only=True,
-                             save_weights_only=True,
-                             mode='max'),
-             TensorBoard(log_dir='logs')]
+    #        EarlyStopping(monitor='val_dice_loss',
+    #                           patience=8,
+    #                           verbose=1,
+    #                           min_delta=1e-4,
+    #                           mode='max'),
+    ReduceLROnPlateau(monitor='val_dice_loss',
+                      factor=0.5,
+                      patience=4,
+                      verbose=1,
+                      epsilon=1e-5,
+                      mode='max'),
+    ModelCheckpoint(monitor='val_dice_loss',
+                    filepath=weigth_name,
+                    save_best_only=True,
+                    save_weights_only=True,
+                    mode='max'),
+    TensorBoard(log_dir='logs')]
 
 model.fit_generator(generator=train_generator(),
                     steps_per_epoch=np.ceil(float(len(train_split)) / float(batch_size)),

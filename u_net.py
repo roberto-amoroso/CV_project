@@ -8,7 +8,7 @@ from losses import bce_dice_loss, dice_loss
 def get_unet_128(input_shape=(128, 128, 3),
                  num_classes=1):
     input_size = input_shape[0]
-    
+
     inputs = Input(shape=input_shape)
     # 128
 
@@ -48,6 +48,16 @@ def get_unet_128(input_shape=(128, 128, 3),
     down4_pool = MaxPooling2D((2, 2), strides=(2, 2))(down4)
     # 8
 
+    # New layer added
+    down5 = Conv2D(512, (3, 3), padding='same')(down4_pool)
+    down5 = BatchNormalization()(down5)
+    down5 = Activation('relu')(down5)
+    down5 = Conv2D(512, (3, 3), padding='same')(down5)
+    down5 = BatchNormalization()(down5)
+    down5 = Activation('relu')(down5)
+    down5_pool = MaxPooling2D((2, 2), strides=(2, 2))(down5)
+    # 4
+
     center = Conv2D(512, (3, 3), padding='same')(down4_pool)
     center = BatchNormalization()(center)
     center = Activation('relu')(center)
@@ -56,7 +66,20 @@ def get_unet_128(input_shape=(128, 128, 3),
     center = Activation('relu')(center)
     # center
 
-    up4 = UpSampling2D((2, 2))(center)
+    up5 = UpSampling2D((2, 2))(center)
+    up5 = concatenate([down5, up5], axis=3)
+    up5 = Conv2D(256, (3, 3), padding='same')(up5)
+    up5 = BatchNormalization()(up5)
+    up5 = Activation('relu')(up5)
+    up5 = Conv2D(256, (3, 3), padding='same')(up5)
+    up5 = BatchNormalization()(up5)
+    up5 = Activation('relu')(up5)
+    up5 = Conv2D(256, (3, 3), padding='same')(up5)
+    up5 = BatchNormalization()(up5)
+    up5 = Activation('relu')(up5)
+    # 8
+
+    up4 = UpSampling2D((2, 2))(up5)
     up4 = concatenate([down4, up4], axis=3)
     up4 = Conv2D(256, (3, 3), padding='same')(up4)
     up4 = BatchNormalization()(up4)
@@ -115,4 +138,3 @@ def get_unet_128(input_shape=(128, 128, 3),
     model.compile(optimizer=RMSprop(lr=0.001), loss=bce_dice_loss, metrics=[dice_loss])
 
     return input_size, model
-
