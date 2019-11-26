@@ -4,14 +4,14 @@ import pandas as pd
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint, TensorBoard
 from sklearn.model_selection import train_test_split
 from augmentators import randomHueSaturationValue, randomHorizontalFlip, randomShiftScaleRotate
-from u_net import get_unet_128
+from u_net import get_unet_128, get_unet_128_modified
 import glob
 from datetime import datetime
 import time
 
-epochs = 10
+epochs = 75
 batch_size = 1  # 2 or 4
-input_size, model = get_unet_128()
+input_size, model = get_unet_128_modified()
 # model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
 
 weigth_name = datetime.now().strftime('weights/%Y_%m_%d_%H_%M_') + (
@@ -40,7 +40,13 @@ def train_generator():
             end = min(start + batch_size, len(train_split))
             ids_train_batch = train_split[start:end]
             for id in ids_train_batch:
-                img = cv2.imread(train_img_path_template.format(id))
+                # grayscale
+                img = cv2.imread(train_img_path_template.format(id), cv2.IMREAD_GRAYSCALE)
+                img = np.dstack((img, img, img))
+
+                # rgb
+                # img = cv2.imread(train_img_path_template.format(id))
+
                 img = cv2.resize(img, (input_size, input_size))
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
                 mask = cv2.resize(mask, (input_size, input_size))
@@ -71,7 +77,13 @@ def valid_generator():
             end = min(start + batch_size, len(valid_split))
             ids_valid_batch = valid_split[start:end]
             for id in ids_valid_batch:
-                img = cv2.imread(train_img_path_template.format(id))
+                # grayscale
+                img = cv2.imread(train_img_path_template.format(id), cv2.IMREAD_GRAYSCALE)
+                img = np.dstack((img, img, img))
+
+                #rgb
+                # img = cv2.imread(train_img_path_template.format(id))
+
                 img = cv2.resize(img, (input_size, input_size))
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
                 mask = cv2.resize(mask, (input_size, input_size))
