@@ -16,6 +16,8 @@ batch_size = 1   # 2 or 4
 input_size, model = get_unet_128()
 #model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
 
+weigth_name = datetime.now().strftime('weights/%Y_%m_%d_%H_%M_') + ('epochs_%d_batch_%d_weights.hdf5' % (epochs, batch_size))
+
 train_img_path_template = 'MyDataset/train/{}.jpg'
 train_img_mask_path_template = 'MyDataset/train/segmentation/{}.png'
 
@@ -95,7 +97,7 @@ callbacks = [
                                epsilon=1e-5,
                                mode='max'),
              ModelCheckpoint(monitor='val_dice_loss',
-                             filepath= datetime.now().strftime('weights/%M_%H_%d_%m_%Y_weights.hdf5'),
+                             filepath= weigth_name,
                              save_best_only=True,
                              save_weights_only=True,
                              mode='max'),
