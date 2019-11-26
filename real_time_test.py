@@ -20,9 +20,9 @@ model.load_weights('weights/good_55_18_25_11_2019_weights.hdf5')
 cv2.namedWindow('Camera Output')
 
 # Get pointer to video frames from primary device
-videoFrame = cv2.VideoCapture(0)
-# videoFrame = cv2.VideoCapture('data/test_video.mp4')
-# videoFrame = cv2.VideoCapture('data/test_video_2.mp4')
+# videoFrame = cv2.VideoCapture(0)
+# videoFrame = cv2.VideoCapture('./data/test_video.mp4')
+videoFrame = cv2.VideoCapture('./data/test_video_2.mp4')
 
 # Process the video frames
 keyPressed = -1  # -1 indicates no key pressed
@@ -36,12 +36,12 @@ while keyPressed < 0:
 
     ###
     # For be smooth, jump some frames
-    # if count < speed:
-    #     count += 1
-    #     _ = videoFrame.read()
-    #     continue
-    # else:
-    #     count = 0
+    if count < speed:
+        count += 1
+        _ = videoFrame.read()
+        continue
+    else:
+        count = 0
 
     # Grab video frame, decode it and return next video frame
     readSucsess, sourceImage = videoFrame.read()
