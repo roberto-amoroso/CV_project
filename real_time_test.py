@@ -14,15 +14,16 @@ threshold = 0.5
 
 epochs = 10
 batch_size = 1
-input_size, model = get_unet_128()
-model.load_weights('weights/2019_11_26_20_03_epochs_10_batch_1_weights.hdf5')
+input_size, model = get_unet_128()  # get_unet_128(input_shape=(256, 256, 3))
+model.load_weights('weights/2019_11_27_00_04_epochs_50_batch_4_weights.hdf5')
+model.load_weights('weights/good_55_18_25_11_2019_weights.hdf5')
 
 cv2.namedWindow('Camera Output')
 
 # Get pointer to video frames from primary device
-videoFrame = cv2.VideoCapture(0)
+# videoFrame = cv2.VideoCapture(0)
 # videoFrame = cv2.VideoCapture('./data/test_video.mp4')
-# videoFrame = cv2.VideoCapture('./data/test_video_2.mp4')
+videoFrame = cv2.VideoCapture('./data/test_video_2.mp4')
 
 # Process the video frames
 keyPressed = -1  # -1 indicates no key pressed
@@ -51,9 +52,8 @@ while keyPressed < 0:
 
     original_img = cv2.resize(sourceImage, (orig_width, orig_height))
 
-    original_img_grey= cv2.cvtColor(original_img, cv2.COLOR_BGR2GRAY)
-    sourceImage = np.dstack((original_img_grey, original_img_grey, original_img_grey))
-    
+    # original_img_grey= cv2.cvtColor(original_img, cv2.COLOR_BGR2GRAY)
+    # sourceImage = np.dstack((original_img_grey, original_img_grey, original_img_grey))
 
     sourceImage = cv2.resize(sourceImage, (input_size, input_size))
 
@@ -83,8 +83,6 @@ while keyPressed < 0:
     # flip the image horizontally
     original_img = cv2.flip(original_img, 1)
     prob = cv2.flip(prob, 1)
-
-    
 
     # Numpy
     red = np.where(prob, 219, original_img[:, :, 0])

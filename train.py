@@ -9,13 +9,13 @@ import glob
 from datetime import datetime
 import time
 
-epochs = 75
-batch_size = 1  # 2 or 4
-input_size, model = get_unet_128_modified()
+epochs = 50
+batch_size = 4  # 1 or 2 or 4
+input_size, model = get_unet_128(input_shape=(256, 256, 3))
 # model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
 
 weigth_name = datetime.now().strftime('weights/%Y_%m_%d_%H_%M_') + (
-            'epochs_%d_batch_%d_weights.hdf5' % (epochs, batch_size))
+        'epochs_%d_batch_%d_weights.hdf5' % (epochs, batch_size))
 
 train_img_path_template = 'MyDataset/train/{}.jpg'
 train_img_mask_path_template = 'MyDataset/train/segmentation/{}.png'
@@ -41,11 +41,11 @@ def train_generator():
             ids_train_batch = train_split[start:end]
             for id in ids_train_batch:
                 # grayscale
-                img = cv2.imread(train_img_path_template.format(id), cv2.IMREAD_GRAYSCALE)
-                img = np.dstack((img, img, img))
+                # img = cv2.imread(train_img_path_template.format(id), cv2.IMREAD_GRAYSCALE)
+                # img = np.dstack((img, img, img))
 
                 # rgb
-                # img = cv2.imread(train_img_path_template.format(id))
+                img = cv2.imread(train_img_path_template.format(id))
 
                 img = cv2.resize(img, (input_size, input_size))
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
@@ -78,11 +78,11 @@ def valid_generator():
             ids_valid_batch = valid_split[start:end]
             for id in ids_valid_batch:
                 # grayscale
-                img = cv2.imread(train_img_path_template.format(id), cv2.IMREAD_GRAYSCALE)
-                img = np.dstack((img, img, img))
+                # img = cv2.imread(train_img_path_template.format(id), cv2.IMREAD_GRAYSCALE)
+                # img = np.dstack((img, img, img))
 
-                #rgb
-                # img = cv2.imread(train_img_path_template.format(id))
+                # rgb
+                img = cv2.imread(train_img_path_template.format(id))
 
                 img = cv2.resize(img, (input_size, input_size))
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
