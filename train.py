@@ -13,9 +13,9 @@ import time
 # batch_size = 4  # 1 or 2 or 4
 # input_size, model = get_unet_128(input_shape=(256, 256, 3))
 
-epochs = input("Number of epochs (50)? ")
-batch_size = input("Batch size (2)? ")
-input_size = input("Input size (128)? ")
+epochs = int(input("Number of epochs (25)? ") or '25')
+batch_size = int(input("Batch size (2)? ") or '2')
+input_size = int(input("Input size (128)? ") or '128')
 input_size, model = get_unet_128(input_shape=(input_size, input_size, 3))
 # model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
 
