@@ -4,7 +4,6 @@ from keras.optimizers import RMSprop
 
 from losses import bce_dice_loss, dice_loss
 
-
 def get_unet_128(input_shape=(128, 128, 3),
                  num_classes=1):
     input_size = input_shape[0]
@@ -115,7 +114,6 @@ def get_unet_128(input_shape=(128, 128, 3),
     model.compile(optimizer=RMSprop(lr=0.001), loss=bce_dice_loss, metrics=[dice_loss])
 
     return input_size, model
-
 
 def get_unet_128_modified(input_shape=(128, 128, 3),
                           num_classes=1):
@@ -250,7 +248,6 @@ def get_unet_128_modified(input_shape=(128, 128, 3),
     model.compile(optimizer=RMSprop(lr=0.001), loss=bce_dice_loss, metrics=[dice_loss])
 
     return input_size, model
-
 
 def get_unet_128_small(input_shape=(128, 128, 3),
                        num_classes=1):

@@ -1,3 +1,4 @@
+selector = int(input('Video source:\n0 - webcam (default)\n1 - video\n2 - video_2\n:') or '0')
 import cv2
 import numpy as np
 import pandas as pd
@@ -11,19 +12,19 @@ orig_width = 340
 orig_height = 260
 
 threshold = 0.5
-
-epochs = 10
-batch_size = 1
 input_size, model = get_unet_128()  # get_unet_128(input_shape=(256, 256, 3))
-model.load_weights('weights/2019_11_27_00_04_epochs_50_batch_4_weights.hdf5')
-model.load_weights('weights/good_55_18_25_11_2019_weights.hdf5')
+model.load_weights('weights/2019_11_27_14_49_epochs_20_batch_2_inputsize_192_weights.hdf5')
+# model.load_weights('weights/good_55_18_25_11_2019_weights.hdf5')
 
 cv2.namedWindow('Camera Output')
 
 # Get pointer to video frames from primary device
-# videoFrame = cv2.VideoCapture(0)
-# videoFrame = cv2.VideoCapture('./data/test_video.mp4')
-videoFrame = cv2.VideoCapture('./data/test_video_2.mp4')
+if selector == 0:
+    videoFrame = cv2.VideoCapture(0)
+elif selector == 1:
+    videoFrame = cv2.VideoCapture('./data/test_video.mp4')
+elif selector == 2:
+    videoFrame = cv2.VideoCapture('./data/test_video_2.mp4')
 
 # Process the video frames
 keyPressed = -1  # -1 indicates no key pressed
@@ -37,12 +38,13 @@ while keyPressed < 0:
 
     ###
     # For be smooth, jump some frames
-    if count < speed:
-        count += 1
-        _ = videoFrame.read()
-        continue
-    else:
-        count = 0
+    if selector != 0: # is not webcam
+        if count < speed:
+            count += 1
+            _ = videoFrame.read()
+            continue
+        else:
+            count = 0
 
     # Grab video frame, decode it and return next video frame
     readSucsess, sourceImage = videoFrame.read()
@@ -84,7 +86,7 @@ while keyPressed < 0:
     original_img = cv2.flip(original_img, 1)
     prob = cv2.flip(prob, 1)
 
-    # Numpy
+    # Apply the mask on the image
     red = np.where(prob, 219, original_img[:, :, 0])
     green = np.where(prob, 235, original_img[:, :, 1])
     blue = np.where(prob, 52, original_img[:, :, 2])
