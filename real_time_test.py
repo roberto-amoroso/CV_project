@@ -15,11 +15,6 @@ orig_height = 260
 
 threshold = 0.5
 
-# date-201911271535_epochs-25_batch-2_inputsize-128_net-small
-# date-201911271552_epochs-30_batch-2_inputsize-128_net-small
-
-date-201911271449_epochs-20_batch-2_inputsize-192_net-small
-
 weights_dir = 'weights/'
 
 onlyfiles = [f for f in listdir(weights_dir) if isfile(join(weights_dir, f))]
