@@ -1,0 +1,183 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Epoch 1/75\
+ - 121s - loss: 0.9640 - dice_loss: 0.2324 - val_loss: 8.1107 - val_dice_loss: 0.1133\
+WARNING:tensorflow:From /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/keras/callbacks.py:995: The name tf.Summary is deprecated. Please use tf.compat.v1.Summary instead.\
+\
+Epoch 2/75\
+ - 121s - loss: 0.5950 - dice_loss: 0.5082 - val_loss: 2.8072 - val_dice_loss: 0.2303\
+Epoch 3/75\
+ - 113s - loss: 0.4666 - dice_loss: 0.6179 - val_loss: 0.6449 - val_dice_loss: 0.5547\
+Epoch 4/75\
+ - 104s - loss: 0.4282 - dice_loss: 0.6632 - val_loss: 1.0549 - val_dice_loss: 0.1560\
+Epoch 5/75\
+ - 104s - loss: 0.4104 - dice_loss: 0.6728 - val_loss: 0.5003 - val_dice_loss: 0.6257\
+Epoch 6/75\
+ - 104s - loss: 0.4018 - dice_loss: 0.6794 - val_loss: 1.5712 - val_dice_loss: 0.3805\
+Epoch 7/75\
+ - 104s - loss: 0.3750 - dice_loss: 0.7003 - val_loss: 0.5765 - val_dice_loss: 0.6033\
+Epoch 8/75\
+ - 105s - loss: 0.3171 - dice_loss: 0.7455 - val_loss: 0.4365 - val_dice_loss: 0.6436\
+Epoch 9/75\
+ - 106s - loss: 0.3149 - dice_loss: 0.7461 - val_loss: 0.5020 - val_dice_loss: 0.6170\
+Epoch 10/75\
+ - 106s - loss: 0.3124 - dice_loss: 0.7480 - val_loss: 0.6986 - val_dice_loss: 0.4197\
+Epoch 11/75\
+ - 106s - loss: 0.3102 - dice_loss: 0.7482 - val_loss: 0.6460 - val_dice_loss: 0.4632\
+Epoch 12/75\
+ - 106s - loss: 0.3170 - dice_loss: 0.7396 - val_loss: 0.6789 - val_dice_loss: 0.4747\
+\
+Epoch 00012: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.\
+Epoch 13/75\
+ - 110s - loss: 0.2486 - dice_loss: 0.7960 - val_loss: 0.4392 - val_dice_loss: 0.6456\
+Epoch 14/75\
+ - 117s - loss: 0.2370 - dice_loss: 0.8030 - val_loss: 0.3843 - val_dice_loss: 0.6828\
+Epoch 15/75\
+ - 127s - loss: 0.2655 - dice_loss: 0.7798 - val_loss: 0.4501 - val_dice_loss: 0.6237\
+Epoch 16/75\
+ - 120s - loss: 0.2669 - dice_loss: 0.7808 - val_loss: 0.3323 - val_dice_loss: 0.7250\
+Epoch 17/75\
+ - 115s - loss: 0.2146 - dice_loss: 0.8268 - val_loss: 0.3224 - val_dice_loss: 0.7335\
+Epoch 18/75\
+ - 111s - loss: 0.2066 - dice_loss: 0.8303 - val_loss: 0.3776 - val_dice_loss: 0.6846\
+Epoch 19/75\
+ - 116s - loss: 0.2170 - dice_loss: 0.8244 - val_loss: 0.4880 - val_dice_loss: 0.6056\
+Epoch 20/75\
+ - 117s - loss: 0.2142 - dice_loss: 0.8278 - val_loss: 0.3087 - val_dice_loss: 0.7445\
+Epoch 21/75\
+ - 112s - loss: 0.2286 - dice_loss: 0.8084 - val_loss: 0.4512 - val_dice_loss: 0.6378\
+Epoch 22/75\
+ - 110s - loss: 0.1874 - dice_loss: 0.8489 - val_loss: 0.4241 - val_dice_loss: 0.6638\
+Epoch 23/75\
+ - 115s - loss: 0.1929 - dice_loss: 0.8429 - val_loss: 0.7292 - val_dice_loss: 0.4141\
+Epoch 24/75\
+ - 122s - loss: 0.2044 - dice_loss: 0.8293 - val_loss: 0.4082 - val_dice_loss: 0.6664\
+\
+Epoch 00024: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.\
+Epoch 25/75\
+ - 100s - loss: 0.1739 - dice_loss: 0.8546 - val_loss: 0.4108 - val_dice_loss: 0.6732\
+Epoch 26/75\
+ - 100s - loss: 0.1616 - dice_loss: 0.8672 - val_loss: 0.3851 - val_dice_loss: 0.6895\
+Epoch 27/75\
+ - 98s - loss: 0.1609 - dice_loss: 0.8657 - val_loss: 0.2980 - val_dice_loss: 0.7618\
+Epoch 28/75\
+ - 98s - loss: 0.1534 - dice_loss: 0.8706 - val_loss: 0.3059 - val_dice_loss: 0.7526\
+Epoch 29/75\
+ - 98s - loss: 0.1464 - dice_loss: 0.8779 - val_loss: 0.3057 - val_dice_loss: 0.7595\
+Epoch 30/75\
+ - 98s - loss: 0.1784 - dice_loss: 0.8523 - val_loss: 0.5021 - val_dice_loss: 0.5944\
+Epoch 31/75\
+ - 98s - loss: 0.1771 - dice_loss: 0.8541 - val_loss: 0.4155 - val_dice_loss: 0.6628\
+\
+Epoch 00031: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.\
+Epoch 32/75\
+ - 98s - loss: 0.1196 - dice_loss: 0.9024 - val_loss: 0.3278 - val_dice_loss: 0.7288\
+Epoch 33/75\
+ - 98s - loss: 0.1488 - dice_loss: 0.8753 - val_loss: 0.2509 - val_dice_loss: 0.7952\
+Epoch 34/75\
+ - 98s - loss: 0.1476 - dice_loss: 0.8768 - val_loss: 0.2300 - val_dice_loss: 0.8105\
+Epoch 35/75\
+ - 100s - loss: 0.1396 - dice_loss: 0.8799 - val_loss: 0.2673 - val_dice_loss: 0.7896\
+Epoch 36/75\
+ - 99s - loss: 0.1425 - dice_loss: 0.8801 - val_loss: 0.4616 - val_dice_loss: 0.6341\
+Epoch 37/75\
+ - 101s - loss: 0.1717 - dice_loss: 0.8547 - val_loss: 0.2783 - val_dice_loss: 0.7739\
+Epoch 38/75\
+ - 102s - loss: 0.1550 - dice_loss: 0.8687 - val_loss: 0.2725 - val_dice_loss: 0.7807\
+\
+Epoch 00038: ReduceLROnPlateau reducing learning rate to 6.25000029685907e-05.\
+Epoch 39/75\
+ - 101s - loss: 0.1553 - dice_loss: 0.8739 - val_loss: 0.2637 - val_dice_loss: 0.7872\
+Epoch 40/75\
+ - 102s - loss: 0.1387 - dice_loss: 0.8838 - val_loss: 0.2340 - val_dice_loss: 0.8109\
+Epoch 41/75\
+ - 101s - loss: 0.1560 - dice_loss: 0.8667 - val_loss: 0.2776 - val_dice_loss: 0.7749\
+Epoch 42/75\
+ - 101s - loss: 0.1304 - dice_loss: 0.8897 - val_loss: 0.2736 - val_dice_loss: 0.7820\
+Epoch 43/75\
+ - 101s - loss: 0.1186 - dice_loss: 0.9009 - val_loss: 0.2717 - val_dice_loss: 0.7849\
+Epoch 44/75\
+ - 103s - loss: 0.1337 - dice_loss: 0.8859 - val_loss: 0.2603 - val_dice_loss: 0.7941\
+\
+Epoch 00044: ReduceLROnPlateau reducing learning rate to 3.125000148429535e-05.\
+Epoch 45/75\
+ - 102s - loss: 0.1355 - dice_loss: 0.8864 - val_loss: 0.2637 - val_dice_loss: 0.7880\
+Epoch 46/75\
+ - 102s - loss: 0.1277 - dice_loss: 0.8904 - val_loss: 0.2631 - val_dice_loss: 0.7900\
+Epoch 47/75\
+ - 103s - loss: 0.1336 - dice_loss: 0.8863 - val_loss: 0.2369 - val_dice_loss: 0.8084\
+Epoch 48/75\
+ - 101s - loss: 0.1285 - dice_loss: 0.8892 - val_loss: 0.2584 - val_dice_loss: 0.7907\
+\
+Epoch 00048: ReduceLROnPlateau reducing learning rate to 1.5625000742147677e-05.\
+Epoch 49/75\
+ - 102s - loss: 0.1241 - dice_loss: 0.8922 - val_loss: 0.2623 - val_dice_loss: 0.7916\
+Epoch 50/75\
+ - 103s - loss: 0.1294 - dice_loss: 0.8883 - val_loss: 0.2597 - val_dice_loss: 0.7936\
+Epoch 51/75\
+ - 102s - loss: 0.1293 - dice_loss: 0.8886 - val_loss: 0.2565 - val_dice_loss: 0.7963\
+Epoch 52/75\
+ - 102s - loss: 0.1352 - dice_loss: 0.8851 - val_loss: 0.2547 - val_dice_loss: 0.7954\
+\
+Epoch 00052: ReduceLROnPlateau reducing learning rate to 7.812500371073838e-06.\
+Epoch 53/75\
+ - 103s - loss: 0.1419 - dice_loss: 0.8777 - val_loss: 0.2557 - val_dice_loss: 0.7952\
+Epoch 54/75\
+ - 102s - loss: 0.1353 - dice_loss: 0.8840 - val_loss: 0.2504 - val_dice_loss: 0.7996\
+Epoch 55/75\
+ - 102s - loss: 0.1527 - dice_loss: 0.8692 - val_loss: 0.2566 - val_dice_loss: 0.7948\
+Epoch 56/75\
+ - 102s - loss: 0.1187 - dice_loss: 0.8989 - val_loss: 0.2567 - val_dice_loss: 0.7945\
+\
+Epoch 00056: ReduceLROnPlateau reducing learning rate to 3.906250185536919e-06.\
+Epoch 57/75\
+ - 102s - loss: 0.1272 - dice_loss: 0.8945 - val_loss: 0.2493 - val_dice_loss: 0.7996\
+Epoch 58/75\
+ - 102s - loss: 0.1500 - dice_loss: 0.8744 - val_loss: 0.2578 - val_dice_loss: 0.7951\
+Epoch 59/75\
+ - 102s - loss: 0.1386 - dice_loss: 0.8785 - val_loss: 0.2534 - val_dice_loss: 0.7972\
+Epoch 60/75\
+ - 102s - loss: 0.1399 - dice_loss: 0.8801 - val_loss: 0.2485 - val_dice_loss: 0.8012\
+\
+Epoch 00060: ReduceLROnPlateau reducing learning rate to 1.9531250927684596e-06.\
+Epoch 61/75\
+ - 102s - loss: 0.1187 - dice_loss: 0.8988 - val_loss: 0.2534 - val_dice_loss: 0.7975\
+Epoch 62/75\
+ - 102s - loss: 0.1246 - dice_loss: 0.8927 - val_loss: 0.2490 - val_dice_loss: 0.8013\
+Epoch 63/75\
+ - 102s - loss: 0.1256 - dice_loss: 0.8907 - val_loss: 0.2523 - val_dice_loss: 0.7986\
+Epoch 64/75\
+ - 102s - loss: 0.1179 - dice_loss: 0.9031 - val_loss: 0.2457 - val_dice_loss: 0.8040\
+\
+Epoch 00064: ReduceLROnPlateau reducing learning rate to 9.765625463842298e-07.\
+Epoch 65/75\
+ - 102s - loss: 0.1034 - dice_loss: 0.9144 - val_loss: 0.2540 - val_dice_loss: 0.7966\
+Epoch 66/75\
+ - 102s - loss: 0.1182 - dice_loss: 0.8996 - val_loss: 0.2566 - val_dice_loss: 0.7952\
+Epoch 67/75\
+ - 102s - loss: 0.1166 - dice_loss: 0.9011 - val_loss: 0.2511 - val_dice_loss: 0.7989\
+Epoch 68/75\
+ - 102s - loss: 0.1257 - dice_loss: 0.8943 - val_loss: 0.2523 - val_dice_loss: 0.7982\
+\
+Epoch 00068: ReduceLROnPlateau reducing learning rate to 4.882812731921149e-07.\
+Epoch 69/75\
+ - 102s - loss: 0.1259 - dice_loss: 0.8927 - val_loss: 0.2480 - val_dice_loss: 0.8016\
+Epoch 70/75\
+ - 102s - loss: 0.1332 - dice_loss: 0.8850 - val_loss: 0.2510 - val_dice_loss: 0.8002\
+Epoch 71/75\
+ - 103s - loss: 0.1352 - dice_loss: 0.8828 - val_loss: 0.2489 - val_dice_loss: 0.8007\
+Epoch 72/75\
+ - 102s - loss: 0.1068 - dice_loss: 0.9084 - val_loss: 0.2543 - val_dice_loss: 0.7979\
+\
+Epoch 00072: ReduceLROnPlateau reducing learning rate to 2.4414063659605745e-07.\
+Epoch 73/75\
+ - 102s - loss: 0.1361 - dice_loss: 0.8842 - val_loss: 0.2505 - val_dice_loss: 0.7997\
+Epoch 74/75\
+ - 102s - loss: 0.1507 - dice_loss: 0.8683 - val_loss: 0.2454 - val_dice_loss: 0.8040\
+Epoch 75/75\
+ - 102s - loss: 0.1581 - dice_loss: 0.8650 - val_loss: 0.2514 - val_dice_loss: 0.7998}
