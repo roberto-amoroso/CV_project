@@ -51,13 +51,13 @@ def train_generator():
                 mask = cv2.imread(train_img_mask_path_template.format(id), cv2.IMREAD_GRAYSCALE)
                 mask = cv2.resize(mask, (input_size, input_size))
                 img = randomHueSaturationValue(img,
-                                               hue_shift_limit=(-55, 55),
-                                               sat_shift_limit=(-10, 10),
-                                               val_shift_limit=(-20, 20))
+                                               hue_shift_limit=(-50, 50),
+                                               sat_shift_limit=(-5, 5),
+                                               val_shift_limit=(-15, 15))
                 img, mask = randomShiftScaleRotate(img, mask,
-                                                   shift_limit=(-0.30, 0.30),
-                                                   scale_limit=(-0.35, 0.35),
-                                                   rotate_limit=(-15, 15))
+                                                   shift_limit=(-0.25, 0.25),
+                                                   scale_limit=(-0.3, 0.3),
+                                                   rotate_limit=(-10, 10))
                 img, mask = randomHorizontalFlip(img, mask)
                 mask = np.expand_dims(mask, axis=2)
                 x_batch.append(img)
