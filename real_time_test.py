@@ -3,18 +3,48 @@ import cv2
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-
+from weight import Weight
 from augmentators import randomHueSaturationValue, randomHorizontalFlip, randomShiftScaleRotate
-from u_net import get_unet_128, get_unet_128_modified
+from u_net import *
 import glob
+from os import listdir
+from os.path import isfile, join
 
 orig_width = 340
 orig_height = 260
 
 threshold = 0.5
-input_size, model = get_unet_128()  # get_unet_128(input_shape=(256, 256, 3))
-model.load_weights('weights/2019_11_27_14_49_epochs_20_batch_2_inputsize_192_weights.hdf5')
-# model.load_weights('weights/good_55_18_25_11_2019_weights.hdf5')
+
+weights_dir = 'weights/'
+
+onlyfiles = [f for f in listdir(weights_dir) if isfile(join(weights_dir, f))]
+for counter, value in enumerate(onlyfiles):
+    try:
+        w = Weight(value)
+        print('%d - %s' % (counter, value))
+    except:
+        print('%d - NOT VALID %s' % (counter, value))
+
+index_weights = int(input('Which weights open? ') or '0')
+
+w = Weight(onlyfiles[index_weights])
+weights = w.name
+params = w.params
+
+input_size = params['inputsize']
+input_shape = (input_size, input_size, 3)
+
+if params['net'] == 'normal': # normal
+    input_size, model = get_unet_128(input_shape=input_shape)
+elif params['net'] == 'big': # big
+    input_size, model = get_unet_128_modified(input_shape=input_shape)
+elif params['net'] == 'small': # small
+    input_size, model = get_unet_128_small(input_shape=input_shape)
+else:
+    raise ValueError('Unkonw net:' + params['net'])
+
+# model.load_weights('weights/2019_11_27_14_49_epochs_20_batch_2_inputsize_192_weights.hdf5')
+model.load_weights(weights_dir + weights)
 
 cv2.namedWindow('Camera Output')
 
@@ -25,6 +55,8 @@ elif selector == 1:
     videoFrame = cv2.VideoCapture('./data/test_video.mp4')
 elif selector == 2:
     videoFrame = cv2.VideoCapture('./data/test_video_2.mp4')
+else:
+    raise ValueError("You have to choose a number from the list")
 
 # Process the video frames
 keyPressed = -1  # -1 indicates no key pressed

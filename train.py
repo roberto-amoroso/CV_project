@@ -16,11 +16,22 @@ import time
 epochs = int(input("Number of epochs (25)? ") or '25')
 batch_size = int(input("Batch size (2)? ") or '2')
 input_size = int(input("Input size (128)? ") or '128')
-input_size, model = get_unet_128(input_shape=(input_size, input_size, 3))
+net_name = input("Which net you want to use?\nnormal (default)\nbig\nsmall\n: ") or 'normal'
+
+input_shape = (input_size, input_size, 3)
+if net_name == 'normal': # normal
+    input_size, model = get_unet_128(input_shape=input_shape)
+elif net_name == 'big': # big
+    input_size, model = get_unet_128_modified(input_shape=input_shape)
+elif net_name == 'small': # small
+    input_size, model = get_unet_128_small(input_shape=input_shape)
+else:
+    raise ValueError('Unkonw net:' + net_name)
+
 # model.load_weights(filepath='weights/best_weights.hdf5') # For resuming train
 
-weigth_name = datetime.now().strftime('weights/%Y_%m_%d_%H_%M_') + (
-        'epochs_%d_batch_%d_weights.hdf5' % (epochs, batch_size))
+weigth_name = datetime.now().strftime('weights/date-%Y%m%d%H%M_') + (
+        'epochs-%d_batch-%d_inputsize-%d_net-%s.hdf5' % (epochs, batch_size, input_size, net_name))
 
 train_img_path_template = 'MyDataset/train/{}.jpg'
 train_img_mask_path_template = 'MyDataset/train/segmentation/{}.png'
