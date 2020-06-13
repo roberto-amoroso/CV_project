@@ -4,7 +4,7 @@ import pandas as pd
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint, TensorBoard
 from sklearn.model_selection import train_test_split
 from augmentators import randomHueSaturationValue, randomHorizontalFlip, randomShiftScaleRotate
-from u_net import get_unet_128, get_unet_128_modified
+from u_net import get_unet_128, get_unet_128_modified, get_unet_128_small
 import glob
 from datetime import datetime
 import time
@@ -33,11 +33,11 @@ else:
 weigth_name = datetime.now().strftime('weights/date-%Y%m%d%H%M_') + (
         'epochs-%d_batch-%d_inputsize-%d_net-%s.hdf5' % (epochs, batch_size, input_size, net_name))
 
-train_img_path_template = 'MyDataset/train/{}.jpg'
-train_img_mask_path_template = 'MyDataset/train/segmentation/{}.png'
+train_img_path_template = 'input/train/{}.png'
+train_img_mask_path_template = 'input/train/segmentation/{}.png'
 
-train_filenames = glob.glob("MyDataset/train/*.jpg")
-train_filenames = [filename.replace('\\', '/').replace('.jpg', '') for filename in train_filenames]
+train_filenames = glob.glob("input/train/*.png")
+train_filenames = [filename.replace('\\', '/').replace('.png', '') for filename in train_filenames]
 train_filenames = [filename.split('/')[-1] for filename in train_filenames]
 
 train_split, valid_split = train_test_split(train_filenames, test_size=0.10, random_state=42)
