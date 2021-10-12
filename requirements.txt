@@ -21,7 +21,7 @@ matplotlib==3.1.1
 networkx==2.4
 numpy==1.17.4
 opencv-contrib-python==3.4.2.16
-opencv-python==3.4.2.16
+opencv-python==4.2.0.32
 opt-einsum==3.1.0
 pandas==0.25.3
 pathspec==0.6.0
