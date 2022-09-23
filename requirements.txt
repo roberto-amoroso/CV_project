@@ -26,7 +26,7 @@ opt-einsum==3.1.0
 pandas==0.25.3
 pathspec==0.6.0
 Pillow==6.2.1
-protobuf==3.10.0
+protobuf==3.18.3
 pyparsing==2.4.5
 python-dateutil==2.8.1
 pytz==2019.3
